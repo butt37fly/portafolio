@@ -68,11 +68,7 @@ export const TEXTS = {
       title: 'Andrés Ospina',
       subtitle: 'Desarrollador Web',
       description: `
-        <p>¡Hola! Soy desarrollador web desde hace más de 3 años, me especializo en crear experiencias digitales que funcionan de verdad.</p>
-
-        <p>Mi zona de confort profesional, WordPress: desarrollo temas, plugins a medida e implemento diseños pixel perfect, pensados para la comodidad de cada pantalla.</p>
-
-        <p>Sin embargo también me apasiona ir más allá del CMS. Me gusta automatizar procesos y trabajar con grandes volúmenes de datos, sin descuidar un frontend limpio y moderno.</p>
+        <p>¡Hola! ¿Cómo estás? Bienvenido a mi portafolio web, encuentra aquí mis trabajos más recientes :)</p>
         `,
     },
     projects: {
@@ -81,11 +77,11 @@ export const TEXTS = {
     about: {
       title: 'Sobre mi',
       description: `
-        <p>¡Hola! Soy desarrollador web desde hace más de 3 años, me especializo en crear experiencias digitales que funcionan de verdad.</p>
+        <p>Con más de 3 años de experiencia en el mundo del desarrollo, cuento con la capacidad técnica para abordar proyectos de diferentes complejidades</p>
 
-        <p>Mi zona de confort profesional, WordPress: desarrollo temas, plugins a medida e implemento diseños pixel perfect, pensados para la comodidad de cada pantalla.</p>
+        <p>Mi zona de confort profesional, WordPress: he desarrollado temas y plugins a la medida para la necesidad específica de cada proyecto, además de liderar la implementación, completamente adaptable, de diseños altamente exigentes.</p>
 
-        <p>Sin embargo también me apasiona ir más allá del CMS. Me gusta automatizar procesos y trabajar con grandes volúmenes de datos, sin descuidar un frontend limpio y moderno.</p>
+        <p>Sin embargo también voy más allá de los gestores de contenido. He participado en el desarrollo de proyectos desde cero, usando PHP para un backend robusto, e implementado diferentes tecnologías como React y Vuejs para un fontend moderno.</p>
         `,
     },
   },
