@@ -161,3 +161,8 @@ $sizes: (
     background-position: -200% 0;
   }
 }
+
+.u-modal-active {
+  height: 100%;
+  overflow: hidden;
+}

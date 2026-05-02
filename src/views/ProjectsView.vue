@@ -12,11 +12,18 @@ const projects = ref([])
 const activeProject = ref({})
 const isLoading = ref(true)
 
+const body = ref(null)
+
 let isModalActive = ref(null)
 
 const openProject = (data) => {
   isModalActive.value = true
   activeProject.value = data
+  body.value.classList.add('u-modal-active')
+}
+const closeProject = () => {
+  isModalActive.value = false
+  body.value.classList.remove('u-modal-active')
 }
 
 const masonryItems = computed(() => {
@@ -27,6 +34,8 @@ const masonryItems = computed(() => {
 })
 
 onMounted(async () => {
+  body.value = document.querySelector('body')
+
   isLoading.value = true
   projects.value = await fetchJson(path)
   isLoading.value = false
@@ -75,7 +84,7 @@ onMounted(async () => {
                 title="Cerrar"
                 icon="cancel"
                 :isAction="true"
-                :onClick="() => (isModalActive = false)"
+                :onClick="closeProject"
               />
             </div>
           </div>
@@ -165,6 +174,7 @@ onMounted(async () => {
 
     &__content {
       height: auto;
+      border-radius: 10px;
     }
 
     &__footer {
