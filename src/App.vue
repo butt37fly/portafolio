@@ -19,4 +19,10 @@ import Footer from '@/components/templates/Footer-default.vue'
   width: 100dvw;
   height: 100dvh;
 }
+
+@media (max-width: 1024px) {
+  #app {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
 </style>

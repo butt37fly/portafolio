@@ -39,4 +39,18 @@ import { MENU } from '@/constants'
     z-index: 1;
   }
 }
+
+@media (max-width: 1024px) {
+  .c-header {
+    grid-area: 10 / 1 / 11 / 13;
+
+    &__menu {
+      flex-direction: row;
+    }
+
+    &__line {
+      display: none;
+    }
+  }
+}
 </style>

@@ -46,11 +46,39 @@ const menu = {
   &__list {
     flex: 0 1 250px;
     list-style: none;
+    padding: unset;
   }
 
   &__link {
     text-decoration: underline;
     text-decoration-color: var(--color-white);
+  }
+}
+
+@media (max-width: 1024px) {
+  .c-footer {
+    grid-area: unset;
+    backdrop-filter: blur(60px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    height: auto;
+    left: 0;
+    margin: 12px auto;
+    padding: var(--size-s);
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 96%;
+    z-index: 99;
+  }
+}
+
+@media (max-width: 768px) {
+  .c-footer {
+    &__list {
+      display: none;
+    }
   }
 }
 </style>

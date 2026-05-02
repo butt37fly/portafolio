@@ -20,4 +20,18 @@ const texts = TEXTS.views.about
   </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media (max-width: 768px) {
+  .about {
+    justify-content: flex-start;
+
+    & > section {
+      flex-direction: column;
+    }
+
+    & > section > div {
+      width: 100%;
+    }
+  }
+}
+</style>

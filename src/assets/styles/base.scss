@@ -98,6 +98,13 @@ main {
   margin: auto;
 }
 
+@media (max-width: 1024px) {
+  main {
+    grid-area: 1 / 1 / 10 / 13;
+    padding-top: 90px;
+  }
+}
+
 h1 {
   font-size: var(--font-size-xxxl);
   font-weight: 700;

@@ -25,11 +25,17 @@ const props = defineProps({
       <div class="c-card__heading u-flex u-w-100 u-align-start u-gap-s">
         <h3 class="c-card__title subtitle">{{ props.title }}</h3>
         <div class="c-card__details u-flex u-row u-gap-s">
-          <span v-show="props.date != ''" class="c-card__detail u-flex u-row u-gap-xxs">
+          <span
+            v-show="props.date != ''"
+            class="c-card__detail u-flex u-justify-start u-row u-gap-xxs"
+          >
             <IconDefault name="clock" />
             {{ props.date }}
           </span>
-          <span v-show="props.at != ''" class="c-card__detail u-flex u-row u-gap-xxs">
+          <span
+            v-show="props.at != ''"
+            class="c-card__detail u-flex u-justify-start u-row u-gap-xxs"
+          >
             <IconDefault name="link" />
             {{ props.at_text }}
             <a :href="props.at_url" target="_blank"> {{ props.at }}</a>
@@ -124,6 +130,8 @@ const props = defineProps({
   }
 
   &__detail {
+    flex-wrap: wrap;
+
     &,
     & a {
       color: var(--color-text);
@@ -131,7 +139,7 @@ const props = defineProps({
   }
 
   &__tags {
-    overflow: auto;
+    flex-wrap: wrap;
   }
 }
 
@@ -145,6 +153,22 @@ const props = defineProps({
 
   &:hover {
     filter: unset;
+  }
+}
+
+@media (max-width: 1024px) {
+  .c-card--modal {
+    & .c-card__details {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: var(--size-xs);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .c-card--modal {
+    height: auto;
   }
 }
 </style>

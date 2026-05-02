@@ -44,7 +44,7 @@ onMounted(async () => {
   --size: 16px;
   width: var(--size);
   height: var(--size);
-  flex: 1 0 var(--size);
+  flex: 0 var(--size);
   margin-bottom: 1px;
 
   &--medium {

@@ -112,7 +112,7 @@ onMounted(async () => {
     border-radius: 10px;
     border: 1px solid var(--color-white);
     height: 90%;
-    width: min(100%, 1000px);
+    width: min(90%, 1000px);
     z-index: 1;
     overflow: hidden;
   }
@@ -146,6 +146,30 @@ onMounted(async () => {
     left: 0;
     position: absolute;
     z-index: 10;
+  }
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .c-modal {
+    &__wrapper {
+      flex-direction: column-reverse;
+    }
+
+    &__images,
+    &__content {
+      width: 100%;
+    }
+
+    &__content {
+      height: auto;
+    }
+
+    &__footer {
+      position: relative;
+    }
   }
 }
 </style>
