@@ -59,7 +59,7 @@ const props = defineProps({
       <div class="c-card__heading u-flex u-row u-w-100 u-align-end u-gap-xxs">
         <h3 class="c-card__title subtitle">{{ props.title }}</h3>
         <div class="c-card__details u-flex u-row u-gap-s">
-          <span class="c-card__detail u-flex u-row u-gap-xxs">
+          <span class="c-card__detail u-justify-start u-flex u-row u-gap-xxs">
             <IconDefault name="clock" />
             {{ props.date }}
           </span>
@@ -131,6 +131,7 @@ const props = defineProps({
 
   &__detail {
     flex-wrap: wrap;
+    width: max-content;
 
     &,
     & a {
@@ -146,10 +147,6 @@ const props = defineProps({
 .c-card--modal {
   border: unset;
   height: 100%;
-
-  &__image {
-    cursor: default;
-  }
 
   &:hover {
     filter: unset;
