@@ -31,9 +31,9 @@ $tag-colors: (
   border-radius: 100px;
   border: 1px solid #fff;
   font-family: 'Roboto', sans-serif;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-2);
   font-weight: 500;
-  padding: var(--size-xxs) var(--size-s);
+  padding: var(--size-1) var(--size-3);
   text-align: center;
   width: auto;
 

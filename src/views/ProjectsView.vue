@@ -62,8 +62,8 @@ onMounted(async () => {
       </template>
     </MasonryWall>
     <section v-show="isModalActive" class="c-modal u-flex u-align-center u-justify-center">
-      <div class="c-modal__wrapper u-flex u-row u-align-center u-justify-center u-gap-s">
-        <div class="c-modal__images u-flex u-align-center u-justify-start u-gap-s u-padding-x-s">
+      <div class="c-modal__wrapper u-flex u-row u-align-center u-justify-center u-g-3">
+        <div class="c-modal__images u-flex u-align-center u-justify-start u-g-3 u-px-3">
           <img
             v-for="item in activeProject.gallery"
             :key="item"
@@ -75,10 +75,10 @@ onMounted(async () => {
         <div class="c-modal__content">
           <CardProject v-bind="activeProject" :onModal="true" />
           <div
-            class="c-modal__footer u-flex u-w-100 u-row u-align-center u-justify-between u-gap-s u-padding-s"
+            class="c-modal__footer u-flex u-w-100 u-row u-align-center u-justify-between u-g-3 u-p-3"
           >
-            <div class="c-modal__actions u-flex u-row u-gap-xs"></div>
-            <div class="c-modal__actions u-flex u-row u-gap-xs">
+            <div class="c-modal__actions u-flex u-row u-g-2"></div>
+            <div class="c-modal__actions u-flex u-row u-g-2">
               <ButtonDefault title="Visitar web" icon="link" :url="activeProject.url" />
               <ButtonDefault
                 title="Cerrar"
@@ -156,13 +156,8 @@ onMounted(async () => {
     position: absolute;
     z-index: 10;
   }
-}
 
-@media (max-width: 1024px) {
-}
-
-@media (max-width: 768px) {
-  .c-modal {
+  @include respond-to(md) {
     &__wrapper {
       flex-direction: column-reverse;
     }

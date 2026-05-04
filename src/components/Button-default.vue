@@ -1,5 +1,5 @@
 <script setup>
-import CustomIcon from './Icon-default.vue'
+import ButtonContent from './Button-content.vue'
 
 const props = defineProps({
   url: String,
@@ -8,43 +8,57 @@ const props = defineProps({
   customStyle: Array,
   isView: Boolean,
   isAction: Boolean,
+  hideTextOnMobile: {
+    type: Boolean,
+    default: false,
+  },
 })
 
-const getCustomStyle = (items) => {
+const buttonStyle = () => {
   const prefix = 'c-button--'
+  const items = props.customStyle
+
+  let style = 'c-button u-flex u-row u-align-center u-justify-center u-g-1 u-py-3 u-px-6 '
   let string = ''
 
-  if (!items) return
+  if (items) {
+    items.forEach((i) => {
+      string += `${prefix}${i} `
+    })
 
-  items.forEach((i) => {
-    string += `${prefix}${i} `
-  })
+    style += string
+  }
 
-  return string
+  return style
 }
-const defaultStyle = 'c-button u-flex u-row u-align-center u-justify-center u-gap-xxs'
-const customStyle = getCustomStyle(props.customStyle)
+
+const textStyle = () => {
+  let style = 'c-button__title '
+
+  if (props.hideTextOnMobile) {
+    style += 'u-sm-hidden'
+  }
+
+  return style
+}
 </script>
 
 <template>
-  <button v-if="props.isActionction != null" :class="[defaultStyle, customStyle]">
-    <CustomIcon class="c-button__icon" v-if="props.icon" :name="props.icon" />
-    {{ props.title }}
+  <button v-if="props.isActionction != null" :class="buttonStyle()">
+    <ButtonContent :title="props.title" :icon="props.icon" :textStyle="textStyle()"></ButtonContent>
   </button>
 
   <RouterLink
     v-else-if="props.isView == true"
     :to="props.url"
-    :class="[defaultStyle, customStyle]"
+    :class="buttonStyle()"
     active-class="c-button--active"
   >
-    <CustomIcon class="c-button__icon" v-if="props.icon" :name="props.icon" />
-    {{ props.title }}
+    <ButtonContent :title="props.title" :icon="props.icon" :textStyle="textStyle()"></ButtonContent>
   </RouterLink>
 
-  <a v-else :href="props.url" target="_blank" :class="[defaultStyle, customStyle]">
-    <CustomIcon class="c-button__icon" v-if="props.icon" :name="props.icon" />
-    {{ props.title }}
+  <a v-else :href="props.url" target="_blank" :class="buttonStyle()">
+    <ButtonContent :title="props.title" :icon="props.icon" :textStyle="textStyle()"></ButtonContent>
   </a>
 </template>
 
@@ -61,9 +75,8 @@ const customStyle = getCustomStyle(props.customStyle)
   cursor: pointer;
   filter: drop-shadow(0px 0px 5px transparent);
   font-family: 'Roboto', sans-serif;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-2);
   font-weight: 700;
-  padding: var(--size-s) var(--size-xl);
   text-decoration: none;
   transition: 0.3s;
 

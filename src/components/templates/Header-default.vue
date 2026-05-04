@@ -4,8 +4,8 @@ import { MENU } from '@/constants'
 </script>
 
 <template>
-  <header class="c-header u-flex u-w-100 u-padding-l">
-    <nav class="c-header__menu u-flex u-gap-s">
+  <header class="c-header u-flex u-w-100 u-p-5">
+    <nav class="c-header__menu u-flex u-g-3">
       <ButtonDefault
         v-for="item in MENU"
         :key="item.title"
@@ -14,6 +14,7 @@ import { MENU } from '@/constants'
         :icon="item.icon"
         :customStyle="item.style"
         :isView="item.isView"
+        :hideTextOnMobile="true"
       />
     </nav>
     <div class="c-header__line"></div>
@@ -38,10 +39,8 @@ import { MENU } from '@/constants'
     width: 1px;
     z-index: 1;
   }
-}
 
-@media (max-width: 1024px) {
-  .c-header {
+  @include respond-to(md) {
     grid-area: 10 / 1 / 11 / 13;
 
     &__menu {

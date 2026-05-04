@@ -47,11 +47,11 @@ onMounted(async () => {
   flex: 0 var(--size);
   margin-bottom: 1px;
 
-  &--medium {
+  &--md {
     --size: 24px;
   }
 
-  &--large {
+  &--lg {
     --size: 32px;
   }
 

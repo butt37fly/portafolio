@@ -9,21 +9,21 @@ const menu = {
 </script>
 
 <template>
-  <footer class="c-footer u-flex u-padding-l u-w-100">
+  <footer class="c-footer u-flex u-p-5 u-md-p-3 u-md-my-3 u-md-mx-auto u-w-100">
     <section class="c-footer__wrapper u-flex u-row u-align-center u-justify-between">
-      <ul class="c-footer__list u-flex u-row u-justify-start u-gap-xs">
+      <ul class="c-footer__list u-flex u-row u-justify-start u-g-3 u-sm-hidden">
         <li v-for="item in menu.left" :key="item.name" class="c-footer__item u-mb-0 u-flex">
           <a :href="item.url" target="_blank" class="c-footer__link u-flex">
-            <IconDefault class="c-icon--large" :name="item.icon" />
+            <IconDefault class="c-icon--lg" :name="item.icon" />
           </a>
         </li>
       </ul>
       <div class="c-footer__container u-flex">
         <h2 class="c-footer__text text">{{ PROJECT_INFO.dev }}</h2>
       </div>
-      <ul class="c-footer__list u-flex u-row u-justify-end u-gap-s">
+      <ul class="c-footer__list u-flex u-row u-justify-end u-g-3 u-sm-hidden">
         <li v-for="item in menu.rigth" :key="item.name" class="c-footer__item u-mb-0 u-flex">
-          <a :href="item.url" target="_blank" class="c-footer__link u-flex u-row u-gap-xxs">
+          <a :href="item.url" target="_blank" class="c-footer__link u-flex u-row u-g-1">
             <span class="c-footer__text">{{ item.name }}</span>
             <IconDefault name="link" />
           </a>
@@ -53,32 +53,20 @@ const menu = {
     text-decoration: underline;
     text-decoration-color: var(--color-white);
   }
-}
 
-@media (max-width: 1024px) {
-  .c-footer {
-    grid-area: unset;
+  @include respond-to(md) {
     backdrop-filter: blur(60px);
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.1);
+    grid-area: unset;
     height: auto;
     left: 0;
-    margin: 12px auto;
-    padding: var(--size-s);
     position: fixed;
     right: 0;
     top: 0;
     width: 96%;
     z-index: 99;
-  }
-}
-
-@media (max-width: 768px) {
-  .c-footer {
-    &__list {
-      display: none;
-    }
   }
 }
 </style>

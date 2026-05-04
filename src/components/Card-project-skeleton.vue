@@ -15,23 +15,21 @@ const getRandomImgHeight = () => {
     v-if="onModal == true"
     class="c-card c-card--modal u-flex u-align-start u-justify-start u-w-100"
   >
-    <div class="c-card__content u-flex u-w-100 u-padding-m u-gap-m">
+    <div class="c-card__content u-flex u-w-100 u-p-m u-gap-m">
       <div class="c-card__heading u-flex u-w-100 u-align-start u-gap-s">
         <h3 class="c-card__title subtitle">{{ props.title }}</h3>
         <div class="c-card__details u-flex u-row u-gap-s">
-          <span v-show="props.date != ''" class="c-card__detail u-flex u-row u-gap-xxs">
+          <span v-show="props.date != ''" class="c-card__detail u-flex u-row u-gap-1">
             <IconDefault name="clock" />
             {{ props.date }}
           </span>
-          <span v-show="props.at != ''" class="c-card__detail u-flex u-row u-gap-xxs">
+          <span v-show="props.at != ''" class="c-card__detail u-flex u-row u-gap-1">
             <IconDefault name="link" />
             {{ props.at_text }}
             <a :href="props.at_url" target="_blank"> {{ props.at }}</a>
           </span>
         </div>
-        <div
-          class="c-card__tags u-flex u-row u-align-start u-justify-start u-w-100 u-pb-xs u-gap-xs"
-        >
+        <div class="c-card__tags u-flex u-row u-align-start u-justify-start u-w-100 u-pb-2 u-gap-2">
           <TagDefault v-for="item in props.tags" :key="item" :name="item" />
         </div>
       </div>
@@ -44,16 +42,14 @@ const getRandomImgHeight = () => {
       class="c-card-skeleton__image u-skeleton"
       :style="`--heigth: ${getRandomImgHeight()}px;`"
     ></div>
-    <div class="c-card-skeleton__content u-flex u-w-100 u-padding-m u-gap-m">
-      <div class="c-card-skeleton__heading u-flex u-row u-w-100 u-align-end u-gap-xxs">
+    <div class="c-card-skeleton__content u-flex u-w-100 u-p-m u-gap-m">
+      <div class="c-card-skeleton__heading u-flex u-row u-w-100 u-align-end u-gap-1">
         <h3 class="c-card-skeleton__title u-skeleton subtitle"></h3>
         <div class="c-card-skeleton__details u-skeleton u-flex u-row u-gap-s">
-          <span class="c-card-skeleton__detail u-flex u-row u-gap-xxs"> </span>
+          <span class="c-card-skeleton__detail u-flex u-row u-gap-1"> </span>
         </div>
       </div>
-      <div
-        class="c-card-skeleton__tags u-flex u-row u-align-start u-justify-start u-w-100 u-gap-xs"
-      >
+      <div class="c-card-skeleton__tags u-flex u-row u-align-start u-justify-start u-w-100 u-gap-2">
         <span class="c-card-skeleton__tag u-skeleton"></span>
         <span class="c-card-skeleton__tag u-skeleton"></span>
         <span class="c-card-skeleton__tag u-skeleton"></span>

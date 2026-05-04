@@ -12,15 +12,15 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="c-card u-flex u-w-100 u-padding-m u-gap-m">
-    <div class="c-card__head u-flex u-w-100 u-justify-start u-align-start u-gap-xxs">
+  <div class="c-card u-flex u-w-100 u-p-4 u-g-4">
+    <div class="c-card__head u-flex u-w-100 u-justify-start u-align-start u-g-1">
       <h2 class="c-card__title subtitle">{{ props.title }}</h2>
-      <div class="c-card__details u-flex u-row u-w-100 u-justify-start u-align-start u-gap-xs">
-        <div class="c-card__detail u-flex u-row u-gap-xxs">
+      <div class="c-card__details u-flex u-row u-w-100 u-justify-start u-align-start u-g-2">
+        <div class="c-card__detail u-flex u-row u-g-1">
           <IconDefault name="clock" />
           {{ props.date }}
         </div>
-        <div class="c-card__detail u-flex u-row u-gap-xxs">
+        <div class="c-card__detail u-flex u-row u-g-1">
           <IconDefault name="company" />
           {{ props.at }}
         </div>

@@ -36,12 +36,9 @@ onMounted(async () => {
         :onClick="() => changeTab(key.slug)"
       />
     </div>
-    <div
-      role="tabpanel"
-      class="c-tab__wrapper u-flex u-w-100 u-justify-start u-align-start u-padding-s"
-    >
+    <div role="tabpanel" class="c-tab__wrapper u-flex u-w-100 u-justify-start u-align-start u-p-3">
       <div
-        class="c-tab__content js-tab-content u-flex u-w-100 u-justify-start u-align-start u-gap-s"
+        class="c-tab__content js-tab-content u-flex u-w-100 u-justify-start u-align-start u-g-3"
         v-for="key in data"
         :key="`${key.title}-tab`"
         :datu-align-tab-content="key.slug"

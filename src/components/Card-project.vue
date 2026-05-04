@@ -21,29 +21,21 @@ const props = defineProps({
     v-if="onModal == true"
     class="c-card c-card--modal u-flex u-align-start u-justify-start u-w-100"
   >
-    <div class="c-card__content u-flex u-w-100 u-padding-m u-gap-m">
-      <div class="c-card__heading u-flex u-w-100 u-align-start u-gap-s">
+    <div class="c-card__content u-flex u-w-100 u-p-4 u-g-4">
+      <div class="c-card__heading u-flex u-w-100 u-align-start u-g-3">
         <h3 class="c-card__title subtitle">{{ props.title }}</h3>
-        <div class="c-card__details u-flex u-row u-gap-s">
-          <span
-            v-show="props.date != ''"
-            class="c-card__detail u-flex u-justify-start u-row u-gap-xxs"
-          >
+        <div class="c-card__details u-flex u-row u-g-3">
+          <span v-show="props.date != ''" class="c-card__detail u-flex u-justify-start u-row u-g-1">
             <IconDefault name="clock" />
             {{ props.date }}
           </span>
-          <span
-            v-show="props.at != ''"
-            class="c-card__detail u-flex u-justify-start u-row u-gap-xxs"
-          >
+          <span v-show="props.at != ''" class="c-card__detail u-flex u-justify-start u-row u-g-1">
             <IconDefault name="link" />
             {{ props.at_text }}
             <a :href="props.at_url" target="_blank"> {{ props.at }}</a>
           </span>
         </div>
-        <div
-          class="c-card__tags u-flex u-row u-align-start u-justify-start u-w-100 u-pb-xs u-gap-xs"
-        >
+        <div class="c-card__tags u-flex u-row u-align-start u-justify-start u-w-100 u-pb-2 u-g-2">
           <TagDefault v-for="item in props.tags" :key="item" :name="item" />
         </div>
       </div>
@@ -55,18 +47,18 @@ const props = defineProps({
     <div class="c-card__image-wrapper" :style="`background-image: url(${props.image}) ;`">
       <img class="c-card__image u-flex" :src="props.image" :alt="props.title" />
     </div>
-    <div class="c-card__content u-flex u-w-100 u-padding-m u-gap-m">
-      <div class="c-card__heading u-flex u-row u-w-100 u-align-end u-gap-xxs">
+    <div class="c-card__content u-flex u-w-100 u-p-4 u-g-4">
+      <div class="c-card__heading u-flex u-row u-w-100 u-align-end u-g-1">
         <h3 class="c-card__title subtitle">{{ props.title }}</h3>
-        <div class="c-card__details u-flex u-row u-gap-s">
-          <span class="c-card__detail u-justify-start u-flex u-row u-gap-xxs">
+        <div class="c-card__details u-flex u-row u-g-3">
+          <span class="c-card__detail u-justify-start u-flex u-row u-g-1">
             <IconDefault name="clock" />
             {{ props.date }}
           </span>
         </div>
       </div>
       <p class="c-card__text">{{ props.excerpt }}</p>
-      <div class="c-card__tags u-flex u-row u-align-start u-justify-start u-w-100 u-pb-xs u-gap-xs">
+      <div class="c-card__tags u-flex u-row u-align-start u-justify-start u-w-100 u-pb-2 u-g-2">
         <TagDefault v-for="item in props.tags" :key="item" :name="item" />
       </div>
     </div>
@@ -151,21 +143,15 @@ const props = defineProps({
   &:hover {
     filter: unset;
   }
-}
 
-@media (max-width: 1024px) {
-  .c-card--modal {
+  @include respond-to(md) {
+    height: auto;
+
     & .c-card__details {
       flex-wrap: wrap;
       justify-content: flex-start;
-      gap: var(--size-xs);
+      gap: var(--size-2);
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .c-card--modal {
-    height: auto;
   }
 }
 </style>
